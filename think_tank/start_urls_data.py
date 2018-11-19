@@ -1,0 +1,17 @@
+START_URLS_DATA = [
+    {'id': 1,
+     'site': 'brookings',
+     'url': 'https://www.brookings.edu/topics/',
+     'tag': 'brookings.org',
+     },
+    {'id': 2,
+     'site': 'rand',
+     'url': 'https://www.rand.org/topics.html',
+     'tag': 'rand.org',
+     },
+    {'id': 3,
+     'site': 'chathamhouse',
+     'url': 'https://www.chathamhouse.org/research/topics/all',
+     'tag': 'chathamhouse.org',
+     },
+]
