@@ -1,7 +1,11 @@
-from think_tank import xpath_parse_utils
-from think_tank.spiders.brookings import BrookingsSpider
-from think_tank import start_urls_utils
+from think_tank.xpath_parse_utils import Parse_xpath
+from think_tank.start_urls_utils import StartUrls
+# from think_tank.spiders.brookings import BrookingsSpider
 
-parse_item = xpath_parse_utils.Parse_xpath()
-brookings_spider_item = BrookingsSpider()
-start_item = start_urls_utils.StartUrls()
+# xpath解析模块实例
+parse_item = Parse_xpath()
+# 爬虫对象
+# brookings_spider_item = BrookingsSpider()
+
+# 起始链模块实例
+start_item = StartUrls()

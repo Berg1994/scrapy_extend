@@ -2,17 +2,15 @@
 import scrapy
 import json
 from think_tank.items import ThinkTankItem
-from think_tank.start_urls_utils import StartUrls
-from think_tank.xpath_parse_utils import Parse_xpath
+from think_tank.common_utils import start_item, parse_item
 
 
 class BrookingsSpider(scrapy.Spider):
-    url_item = StartUrls()
-    parse_item = Parse_xpath()
-    urls_data = url_item.get_url('brookings')
+    urls_data = start_item.get_url('brookings')
     name = urls_data['tag']
     allowed_domains = [urls_data['site']]
     start_urls = urls_data['url']
+    item = ThinkTankItem()
 
     def parse(self, response):
         """
@@ -50,26 +48,20 @@ class BrookingsSpider(scrapy.Spider):
         yield scrapy.Request(page_next, callback=self.parse_topic_page,
                              meta={'page': page, 'url': meta_url, })
 
-    def parse_svg(self, response):
-        """
-        解析svg链接
-        :return: json数据
-        """
-        svg_data = json.loads(response.text)
-        if svg_data['success']:
-            return svg_data['data']
-        else:
-            return None
-
     def parse_page_detail(self, response):
         """
         解析页面详情
         """
         # 通过获取数据库对应xpath解析对应字段
-        content_by_xpath = self.parse_item.parse_response(self.urls_data['site'], response)
+
+        content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
+        content_by_xpath['svg_data'] = []
+        if content_by_xpath['svg_data_urls']:
+            content_by_xpath['svg_data'].append(
+                parse_item.parse_svg_url(content_by_xpath['svg_data_urls']))
         # 对非解析获取的字段赋值
-        data = self.parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
-        item = ThinkTankItem()
-        item['data'] = data
-        item['site'] = self.urls_data['site']
-        yield item
+        data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
+        self.item['data'] = data
+        self.item['tag'] = self.urls_data['tag']
+        self.item['site'] = self.urls_data['site']
+        yield self.item

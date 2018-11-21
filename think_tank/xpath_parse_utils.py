@@ -1,12 +1,15 @@
 import hashlib
+import json
 import re
 import time
+
+import requests
 import scrapy
 import pymongo
 
 from think_tank import xpath_data
 from think_tank import settings
-from think_tank.spiders.brookings import BrookingsSpider
+from think_tank.spiders import brookings
 
 
 class Parse_xpath(object):
@@ -42,29 +45,29 @@ class Parse_xpath(object):
         res = self.collection.find_one({'tag': tag})
         return res
 
-    def parse_response(self, site, response):
-        result = self.get_xpath_data(site)
+    def parse_response(self, tag, response):
+        result = self.get_xpath_data(tag)
+
         data = {}
         for xpath_field in result['xpath']:
             for k, v in xpath_field.items():
                 if isinstance(v, list):
                     for value in v:
                         try:
-                            ret = response.xpath(value).extarct()
+                            ret = response.xpath(value).extract()
                             if ret:
-                                data[k] = self.parse_text(ret).strip()
-                            else:
-                                data[k] = ""
+                                data[k] = (self.parse_text(ret).split())
+
+
                         except:
                             data['error_url'] = response.url
-
-                else:
+                elif isinstance(v, str):
                     try:
                         ret = response.xpath(v).extract()
-                        if ret:
-                            data[k] = self.parse_text(ret).strip()
-                        else:
+                        if not ret:
                             data[k] = ""
+                        else:
+                            data[k] = self.parse_text(ret).strip()
                     except:
                         data['error_url'] = response.url
         return data
@@ -93,7 +96,7 @@ class Parse_xpath(object):
 
         return data
 
-    def parse_svg(self, response, data , site):
+    def parse_svg_url(self, svg_urls):
         """
         解析页面中svg图
         :param site: 网站名称/标识
@@ -101,19 +104,10 @@ class Parse_xpath(object):
         :return: svg接口数据
         """
         svg_data_list = []
-        result = self.get_xpath_data(site)
-        for xpath_field in result['xpath']:
-            for k, v in xpath_field.items():
-                if k == 'svg_data':
-                    svg_urls = response.xpath(v).extract()
-                    if svg_urls:
-                        for svg_url in svg_urls:
-                            svg_data = scrapy.Request(svg_url, callback=BrookingsSpider.parse_svg)
-                            svg_data_list.append(svg_data)
-                        data['svg_data'] = svg_data_list
-                        return data
-                else:
-                    return None
+        for svg_url in svg_urls.split():
+            svg_data = json.loads(requests.get(svg_url).text)
+            svg_data_list.append(svg_data)
+        return svg_data_list
 
     def parse_text(self, items):
         """
