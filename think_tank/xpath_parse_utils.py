@@ -1,11 +1,12 @@
 import hashlib
 import re
 import time
-
+import scrapy
 import pymongo
 
 from think_tank import xpath_data
 from think_tank import settings
+from think_tank.spiders.brookings import BrookingsSpider
 
 
 class Parse_xpath(object):
@@ -22,40 +23,97 @@ class Parse_xpath(object):
         self.collection = self.db[self.mongo_collection]
 
     def save_xpath_data(self):
-        for xpath in xpath_data.XPAHT_DATA:
-            self.collection.update_one({'id': xpath['id']}, {'$set': xpath}, True)
+        """
+        保存xpath解析数据
+        """
+        try:
+            for xpath in xpath_data.XPAHT_DATA:
+                self.collection.update_one({'id': xpath['id']}, {'$set': xpath}, True)
+            print('保存成功')
+        except:
+            print('保存失败')
 
     def get_xpath_data(self, tag):
+        """
+        获取对应网站xpath解析数据
+        :param site: 网站名称/标识
+        :return: xpath数据
+        """
         res = self.collection.find_one({'tag': tag})
         return res
 
-    def parse_response(self, tag, response):
-        result = self.get_xpath_data(tag)
+    def parse_response(self, site, response):
+        result = self.get_xpath_data(site)
         data = {}
         for xpath_field in result['xpath']:
             for k, v in xpath_field.items():
                 if isinstance(v, list):
                     for value in v:
-                        ret = response.xpath(value).extarct()
+                        try:
+                            ret = response.xpath(value).extarct()
+                            if ret:
+                                data[k] = self.parse_text(ret).strip()
+                            else:
+                                data[k] = ""
+                        except:
+                            data['error_url'] = response.url
+
+                else:
+                    try:
+                        ret = response.xpath(v).extract()
                         if ret:
                             data[k] = self.parse_text(ret).strip()
                         else:
                             data[k] = ""
-                else:
-                    ret = response.xpath(v).extract()
-                    if ret:
-                        data[k] = self.parse_text(ret).strip()
-                    else:
-                        data[k] = ""
+                    except:
+                        data['error_url'] = response.url
         return data
 
     def parse_common_field(self, response, data: dict, tag):
+        """
+        非xpath解析字段处理
+        :param response: 文章内容响应
+        :param data: xpath解析内容
+        :param site: 网站标识
+        :return: 页面解析内容
+        """
+        # 当前页面链接
         data['primary_site'] = response.url
+        # 网站名称
         data['org_name'] = tag
+        # 爬取时间
         data['create_time'] = time.time()
+        # 指纹
         data['finger_print'] = self.create_fingerprint(response.url)
+        # 内容分类
+        try:
+            data['classify'] = response.url.split('/')[3]
+        except:
+            data['classify'] = response.url
 
         return data
+
+    def parse_svg(self, response, data , site):
+        """
+        解析页面中svg图
+        :param site: 网站名称/标识
+        :param response: 页面响应
+        :return: svg接口数据
+        """
+        svg_data_list = []
+        result = self.get_xpath_data(site)
+        for xpath_field in result['xpath']:
+            for k, v in xpath_field.items():
+                if k == 'svg_data':
+                    svg_urls = response.xpath(v).extract()
+                    if svg_urls:
+                        for svg_url in svg_urls:
+                            svg_data = scrapy.Request(svg_url, callback=BrookingsSpider.parse_svg)
+                            svg_data_list.append(svg_data)
+                        data['svg_data'] = svg_data_list
+                        return data
+                else:
+                    return None
 
     def parse_text(self, items):
         """
@@ -63,10 +121,26 @@ class Parse_xpath(object):
         :param items: 节点获取的文本列表
         :return: 文本字符串
         """
-        str_items = ''.join(items).strip()
-        str_content = re.sub(r'\r|\n|\t\xa0', '', str_items)
-        return str_content
+        content = ''
+        for ele in items:
+            str = re.sub(r'\r|\n|\t|\xa0', '', ele)
+            content += str + ' '
+        return content.strip()
 
     def create_fingerprint(self, url):
+        """
+        生成链接摘要
+        :param url: 当前页面链接
+        :return: 链接摘要
+        """
         hash_sha1 = hashlib.sha1(url.encode('utf8'))
         return hash_sha1.hexdigest()
+
+
+def main():
+    xpath = Parse_xpath()
+    xpath.save_xpath_data()
+
+
+if __name__ == '__main__':
+    main()

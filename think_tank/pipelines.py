@@ -17,7 +17,7 @@ class ThinkTankPipeline(object):
         self.db = conn[self.mongodb_db]
 
     def process_item(self, item, spider):
-        if spider.name == item['site']:
+        if spider.name == item['tag']:
             self.collcetions = self.db[item['tag']]
             self.collcetions.update({'finger_print': item['data']['finger_print']}, {'$set': item['data']}, True)
 

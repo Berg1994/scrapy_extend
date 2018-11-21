@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+import json
 from think_tank.items import ThinkTankItem
 from think_tank.start_urls_utils import StartUrls
 from think_tank.xpath_parse_utils import Parse_xpath
@@ -8,10 +8,11 @@ from think_tank.xpath_parse_utils import Parse_xpath
 
 class BrookingsSpider(scrapy.Spider):
     url_item = StartUrls()
-    urls_data = url_item.get_url('brookings.org')
-    name = urls_data['site']
-    # allowed_domains = urls_data['tag']
-    start_urls = [urls_data['url']]
+    parse_item = Parse_xpath()
+    urls_data = url_item.get_url('brookings')
+    name = urls_data['tag']
+    allowed_domains = [urls_data['site']]
+    start_urls = urls_data['url']
 
     def parse(self, response):
         """
@@ -49,12 +50,26 @@ class BrookingsSpider(scrapy.Spider):
         yield scrapy.Request(page_next, callback=self.parse_topic_page,
                              meta={'page': page, 'url': meta_url, })
 
+    def parse_svg(self, response):
+        """
+        解析svg链接
+        :return: json数据
+        """
+        svg_data = json.loads(response.text)
+        if svg_data['success']:
+            return svg_data['data']
+        else:
+            return None
+
     def parse_page_detail(self, response):
-        parse_item = Parse_xpath()
-        content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
-        data = parse_item.parse_common_field(response,content_by_xpath,self.urls_data['tag'])
+        """
+        解析页面详情
+        """
+        # 通过获取数据库对应xpath解析对应字段
+        content_by_xpath = self.parse_item.parse_response(self.urls_data['site'], response)
+        # 对非解析获取的字段赋值
+        data = self.parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
         item = ThinkTankItem()
         item['data'] = data
-        item['tag'] = self.urls_data['tag']
         item['site'] = self.urls_data['site']
         yield item

@@ -5,6 +5,9 @@ from think_tank import settings
 
 
 class StartUrls(object):
+    """
+    起始链接模块
+    """
 
     def __init__(self):
         self.mongo_host = settings.MONGODB_HOST
@@ -30,7 +33,7 @@ class StartUrls(object):
         :param self: 网站名称
         :return: 返回url链接详情
         """
-        res = self.collection.find_one({'tag': str(tag)})
+        res = self.collection.find_one({'tag': tag})
         return res
 
     def del_url(self):
@@ -46,3 +49,12 @@ class StartUrls(object):
         :return:
         """
         pass
+
+
+def main():
+    start = StartUrls()
+    start.save_url()
+
+
+if __name__ == '__main__':
+    main()
