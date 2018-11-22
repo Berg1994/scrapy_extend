@@ -104,27 +104,3 @@ class ThinkTankDownloaderMiddleware(object):
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
-
-
-# class GetSvgMiddleware(object):
-#
-#     def process_response(self, request, response, spider):
-#         """
-#         对能够解析到svg的响应再次请求接口
-#         :return: HtmlResponse
-#         """
-#         svg_data_list = []
-#         if spider.name == 'brookings':
-#             try:
-#                 svg_urls = response.xpath('//figure[@class="simplechart-widget"]/@data-url').extract()
-#                 if svg_urls:
-#                     for svg_url in svg_urls:
-#                         svg_data = json.loads(requests.get(svg_url).text)
-#                         svg_data_list.append(svg_data)
-#                     request.meta['svg_data'] = svg_data_list
-#                     return HtmlResponse(url=response.url, body=response.body, request=request,
-#                                         encoding='utf-8', status=200)
-#                 return response
-#             except:
-#                 return response
-#         return response

@@ -18,9 +18,7 @@ class ThinkTankPipeline(object):
 
     def process_item(self, item, spider):
         if spider.name == item['tag']:
-            self.collcetions = self.db[item['tag']]
-            # self.collcetions.update({'finger_print': item['data']['finger_print']},
-            #                         {'$push': {'svg_data': item['data']['svg_data']}})
-            self.collcetions.update({'finger_print': item['data']['finger_print']}, {'$set': item['data']}, True)
+            collcetions = self.db[item['tag']]
+            collcetions.update({'finger_print': item['data']['finger_print']}, {'$set': item['data']}, True)
 
         return item

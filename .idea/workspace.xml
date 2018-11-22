@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a931b84-9436-4a9a-a0dc-d0e3646cd75a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/think_tank.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/think_tank.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test1.py" beforeDir="false" afterPath="$PROJECT_DIR$/test1.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/common_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/common_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/think_tank/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/middlewares.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/pipelines.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/think_tank/spiders/brookings.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/spiders/brookings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/spiders/brookings_about.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/spiders/brookings_about.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/think_tank/spiders/brookings_experts.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/spiders/brookings_experts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/think_tank/spiders/start.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/spiders/start.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/think_tank/start_urls_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/start_urls_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/xpath_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/xpath_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/think_tank/xpath_parse_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/think_tank/xpath_parse_utils.py" afterDir="false" />
     </list>
@@ -25,48 +23,48 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/think_tank$xpath_parse.coverage" NAME="xpath_parse Coverage Results" MODIFIED="1542597109901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
     <SUITE FILE_PATH="coverage/think_tank$common_utils.coverage" NAME="common_utils Coverage Results" MODIFIED="1542765607490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
-    <SUITE FILE_PATH="coverage/think_tank$xpath_parse_utils.coverage" NAME="xpath_parse_utils Coverage Results" MODIFIED="1542792602680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
+    <SUITE FILE_PATH="coverage/think_tank$xpath_parse_utils.coverage" NAME="xpath_parse_utils Coverage Results" MODIFIED="1542875912451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
     <SUITE FILE_PATH="coverage/think_tank$start_urls_get.coverage" NAME="start_urls_get Coverage Results" MODIFIED="1542270805804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
     <SUITE FILE_PATH="coverage/think_tank$brookings__1_.coverage" NAME="brookings (1) Coverage Results" MODIFIED="1542592880075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank/spiders" />
     <SUITE FILE_PATH="coverage/think_tank$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1542779644884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/think_tank$test1__1_.coverage" NAME="test1 (1) Coverage Results" MODIFIED="1542591726332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
-    <SUITE FILE_PATH="coverage/think_tank$start_urls_utils.coverage" NAME="start_urls_utils Coverage Results" MODIFIED="1542766653578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
-    <SUITE FILE_PATH="coverage/think_tank$brookings.coverage" NAME="brookings Coverage Results" MODIFIED="1542795383905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank/spiders" />
+    <SUITE FILE_PATH="coverage/think_tank$start_urls_utils.coverage" NAME="start_urls_utils Coverage Results" MODIFIED="1542865064055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank" />
+    <SUITE FILE_PATH="coverage/think_tank$brookings.coverage" NAME="brookings Coverage Results" MODIFIED="1542880009185" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/think_tank/spiders" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-23058239">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
-          <entry key="project.open.time.0" value="4" />
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="6" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.76" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cfg" value="2" />
-          <entry key="py" value="59" />
+          <entry key="py" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Ini" value="2" />
-          <entry key="Python" value="59" />
+          <entry key="Python" value="90" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="Python Console" value="1488" />
+          <entry key="Python Console" value="1686" />
           <entry key="dummy" value="43" />
-          <entry key="py" value="9163" />
+          <entry key="py" value="10385" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="43" />
-          <entry key="Python" value="10651" />
+          <entry key="Python" value="12071" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -75,11 +73,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="752">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
                 <marker date="1542789078467" expanded="true" signature="1884:1888" ph="..." />
@@ -89,14 +87,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think_tank/middlewares.py">
+        <entry file="file://$PROJECT_DIR$/think_tank/common_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="115" column="28" lean-forward="true" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#168#179#0" expanded="true" />
-                <marker date="1542788339826" expanded="true" signature="3701:3702" ph="..." />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings_about.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think_tank/spiders/start.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -104,41 +122,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/think_tank/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
+            <state relative-caret-position="650">
+              <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think_tank/pipelines.py">
+        <entry file="file://$PROJECT_DIR$/think_tank/start_urls_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="29" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="22" selection-end-column="29" />
-              <folding>
-                <element signature="e#24#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/think_tank/xpath_data.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="118" column="25" lean-forward="true" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+            <state relative-caret-position="243">
+              <caret line="42" selection-start-line="42" selection-end-line="42" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think_tank/commands/crawlall.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="32" lean-forward="true" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="98" selection-start-line="98" selection-end-line="98" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/think_tank/spiders/rand_org.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-401">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -171,19 +210,22 @@
         <option value="$PROJECT_DIR$/think_tank/parse_xpath.py" />
         <option value="$PROJECT_DIR$/think_tank/test1.py" />
         <option value="$PROJECT_DIR$/think_tank/xpath_parse.py" />
-        <option value="$PROJECT_DIR$/think_tank/start_urls_utils.py" />
-        <option value="$PROJECT_DIR$/think_tank/items.py" />
-        <option value="$PROJECT_DIR$/think_tank/spiders/brookings_about.py" />
-        <option value="$PROJECT_DIR$/think_tank/common_utils.py" />
-        <option value="$PROJECT_DIR$/think_tank/spiders/start.py" />
-        <option value="$PROJECT_DIR$/test1.py" />
-        <option value="$PROJECT_DIR$/think_tank/pipelines.py" />
         <option value="$PROJECT_DIR$/think_tank/spiders/brookings_experts.py" />
-        <option value="$PROJECT_DIR$/think_tank/middlewares.py" />
-        <option value="$PROJECT_DIR$/think_tank/settings.py" />
         <option value="$PROJECT_DIR$/think_tank/spiders/brookings.py" />
-        <option value="$PROJECT_DIR$/think_tank/xpath_data.py" />
+        <option value="$PROJECT_DIR$/think_tank/common_utils.py" />
+        <option value="$PROJECT_DIR$/think_tank/items.py" />
+        <option value="$PROJECT_DIR$/think_tank/middlewares.py" />
+        <option value="$PROJECT_DIR$/think_tank/pipelines.py" />
+        <option value="$PROJECT_DIR$/think_tank/start_urls_utils.py" />
+        <option value="$PROJECT_DIR$/think_tank/spiders/brookings_about.py" />
+        <option value="$PROJECT_DIR$/think_tank/spiders/rand_org.py" />
+        <option value="$PROJECT_DIR$/think_tank/start_urls_data.py" />
         <option value="$PROJECT_DIR$/think_tank/xpath_parse_utils.py" />
+        <option value="$PROJECT_DIR$/think_tank/xpath_data.py" />
+        <option value="$PROJECT_DIR$/test1.py" />
+        <option value="$PROJECT_DIR$/think_tank/commands/crawlall.py" />
+        <option value="$PROJECT_DIR$/think_tank/settings.py" />
+        <option value="$PROJECT_DIR$/think_tank/spiders/start.py" />
       </list>
     </option>
   </component>
@@ -194,8 +236,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-3" />
-    <option name="width" value="1131" />
+    <option name="x" value="371" />
+    <option name="y" value="26" />
+    <option name="width" value="1324" />
     <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -206,6 +249,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,22 +266,30 @@
               <item name="think_tank" type="b2602c69:ProjectViewProjectNode" />
               <item name="think_tank" type="462c0819:PsiDirectoryNode" />
               <item name="think_tank" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="think_tank" type="b2602c69:ProjectViewProjectNode" />
+              <item name="think_tank" type="462c0819:PsiDirectoryNode" />
+              <item name="think_tank" type="462c0819:PsiDirectoryNode" />
               <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="G:/all/11.13/workspace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\think_tank\think_tank" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\think_tank" />
       <recent name="E:\think_tank\think_tank" />
@@ -376,8 +428,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.xpath_parse_utils" />
-        <item itemvalue="Python.test1" />
         <item itemvalue="Python.start_urls_utils" />
+        <item itemvalue="Python.test1" />
         <item itemvalue="Python.common_utils" />
       </list>
     </recent_temporary>
@@ -406,25 +458,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15191898" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.32968238" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4002169" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.26030368" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22692725" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2616721" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32968238" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22124863" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.32899022" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.12920739" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32968238" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32968238" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -442,14 +493,49 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/think_tank/spiders/brookings_experts.py</url>
-          <line>42</line>
-          <option name="timeStamp" value="65" />
+          <url>file://$PROJECT_DIR$/think_tank/spiders/rand_org.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/think_tank/middlewares.py</url>
-          <line>120</line>
-          <option name="timeStamp" value="78" />
+          <url>file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py</url>
+          <line>74</line>
+          <option name="timeStamp" value="83" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py</url>
+          <line>72</line>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/spiders/brookings.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/spiders/brookings.py</url>
+          <line>56</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/spiders/rand_org.py</url>
+          <line>48</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/spiders/brookings.py</url>
+          <line>57</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/think_tank/spiders/brookings.py</url>
+          <line>62</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -503,126 +589,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/common_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/start_urls_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/start_urls_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="37" column="11" lean-forward="true" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/spiders/start.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings_experts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings_about.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/xpath_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="75" column="9" lean-forward="true" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="115" column="28" lean-forward="true" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="28" />
-          <folding>
-            <element signature="e#168#179#0" expanded="true" />
-            <marker date="1542788339826" expanded="true" signature="3701:3702" ph="..." />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/think_tank/commands/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/think_tank/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="29" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="22" selection-end-column="29" />
+        <state relative-caret-position="408">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#24#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings.py">
+    <entry file="file://$PROJECT_DIR$/think_tank/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="769">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
           <folding>
-            <element signature="e#24#37#0" expanded="true" />
-            <marker date="1542789078467" expanded="true" signature="1884:1888" ph="..." />
+            <element signature="e#168#179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/start_urls_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings_experts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python3.6/python_base_env/Lib/site-packages/scrapy/http/response/text.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://E:/Python3.6/python_base_env/Lib/re.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="190" selection-start-line="190" selection-end-line="190" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/xpath_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="77" column="64" lean-forward="true" selection-start-line="77" selection-start-column="64" selection-end-line="77" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/commands/crawlall.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="32" lean-forward="true" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/spiders/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/common_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings_about.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/start_urls_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/spiders/rand_org.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-401">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/think_tank/xpath_parse_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="118" column="25" lean-forward="true" selection-start-line="118" selection-start-column="25" selection-end-line="118" selection-end-column="25" />
+        <state relative-caret-position="217">
+          <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/think_tank/spiders/brookings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="752">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <marker date="1542789078467" expanded="true" signature="1884:1888" ph="..." />
           </folding>
         </state>
       </provider>

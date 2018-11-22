@@ -11,9 +11,9 @@ import scrapy
 class ThinkTankItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    #标签
+    # 标签
     tag = scrapy.Field()
-    #数据
+    # 数据
     data = scrapy.Field()
-    #网站名
+    # 网站名
     site = scrapy.Field()

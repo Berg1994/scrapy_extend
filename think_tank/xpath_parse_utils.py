@@ -32,8 +32,10 @@ class Parse_xpath(object):
         try:
             for xpath in xpath_data.XPAHT_DATA:
                 self.collection.update_one({'id': xpath['id']}, {'$set': xpath}, True)
-            print('保存成功')
-        except:
+                print('%s------------------------------------> 保存成功' % xpath['tag'])
+            print('保存完成')
+        except Exception as e:
+            print(e.args)
             print('保存失败')
 
     def get_xpath_data(self, tag):
@@ -56,7 +58,7 @@ class Parse_xpath(object):
                         try:
                             ret = response.xpath(value).extract()
                             if ret:
-                                data[k] = (self.parse_text(ret).split())
+                                data[k] = (self.parse_text(ret).strip())
 
 
                         except:

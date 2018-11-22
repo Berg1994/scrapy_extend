@@ -5,7 +5,7 @@ from think_tank.common_utils import start_item, parse_item
 
 
 class BrookingsAboutSpider(scrapy.Spider):
-    urls_data = start_item.get_url('brookings_experts')
+    urls_data = start_item.get_url('brookings_about')
     name = urls_data['tag']
     allowed_domains = [urls_data['site']]
     start_urls = urls_data['url']

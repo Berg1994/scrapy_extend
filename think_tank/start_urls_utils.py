@@ -24,8 +24,14 @@ class StartUrls(object):
         """
         存入链接
         """
-        for url_data in start_urls_data.START_URLS_DATA:
-            self.collection.update_one({'id': url_data['id']}, {'$set': url_data}, True)
+        try:
+            for url_data in start_urls_data.START_URLS_DATA:
+                self.collection.update_one({'id': url_data['id']}, {'$set': url_data}, True)
+                print('%s---------------------------------------> 保存成功' % url_data['tag'])
+            print('保存完成')
+        except Exception as e:
+            print(e.args)
+            print('保存失败')
 
     def get_url(self, tag):
         """

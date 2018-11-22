@@ -64,7 +64,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'think_tank.pipelines.ThinkTankPipeline': 300,
+    'think_tank.pipelines.ThinkTankPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -97,3 +97,4 @@ MONGODB_DB = 'SPIDER_MODELS'
 MONGODB_COLLECTIONS_START_URLS = 'start_urls_data'
 MONGODB_COLLECTIONS_XPATH_PARSE = 'parse_xpath_data'
 
+# COMMANDS_MODULE = 'think_tank.commands'

@@ -33,6 +33,6 @@
 # str2 = json.dumps(str1)
 # str3 = json.loads(str2)
 # print(str3)
-dic1 = {'data':['1','2','3']}
-dic1['data'].append('4')
-print(dic1)
+# dic1 = {'data':['1','2','3']}
+# dic1['data'].append('4')
+# print(dic1)
