@@ -72,6 +72,8 @@ XPAHT_DATA = [
         'xpath': [
             # 标题
             {'title': '//div[@id="content"]//h1//text()'},
+            # 图标
+            {'logo': '//meta[@property="og:image"]/@content'},
             # 内容
             {'content': ['//div[@id="srch"]//p[@class=""]//text()',
                          '//div[@class="body-text"]//p//text()',
@@ -114,14 +116,51 @@ XPAHT_DATA = [
             ]},
             # 专家头像
             {'expert_ icon': '//div[@class="basic-info"]/img/@src'},
-            # 专家职称
-            {'expert_name': '//div[@class="title"]//text()'},
+            # 专家名称
+            {'expert_name': '//div[@id="content"]//h1//text()'},
             # 专家简介
             {'expert_info': '//div[@class="basic-info"]/div//text()'},
             # 专家详情
             {'expert_detail': '//div[@id="onebio_overview"]//text()'},
             # 专家简历
-            {'expertDV': '//div[@id="onebio_overview"]//text()'}
+            {'expertDV': '//ul[contains(@class,"printable-info")]//a[@class="pdf"]/@href'}
+
+        ]
+    },
+    {
+        'id': 5,
+        'site': 'chanthamhouse.org',
+        'tag': 'chanthamhouse',
+        'xpath': [
+            # 标题
+            {'title': '//section[contains(@class,"page__section__main")]//h1//text()'},
+            # 作者/参与者
+            {'author': '//div[@class="group-authors"]//text()'},
+            # 内容
+            {'content': '//div[contains(@class,"rich-text")]//text()'},
+            # 发布时间
+            {'publish_time': '//div[contains(@class,"date")]/span//text()'},
+            # 文章注释
+            {'foot_note': '//section[@class="endnotes"]/div/ol/li//text()'},
+            # 音频链接
+            {'audio_url': '//div[contains(@class,"past-event-secondary-wrapper")]//article[3]/a/@href'},
+            # 视频链接
+            {'video_url': '//div[@class="vid-wrapper"]//@src'},
+            # 相关领域/主题
+            {'topics': '//div[contains(@class,"projects")]/div//text()'},
+            # 图片链接
+            {'images_url': ['//div[@class="image-wrapper"]/img//@data-src',
+                            '//div[contains(@class,"post-body")]//p//img/@src',
+                            '//div[contains(@class,"post-body")]/div/img/@data-src',
+                            ]},
+            # 书籍说明
+            {'book_info': '/html/body/div[2]/header/div/div[2]/h2//text()'},
+            # 会议地址
+            {'address': '//div[contains(@class,"meta--location")]//text()'},
+            # 网站logo
+            {'logo': '//link[@rel="shortcut icon"]/@href'},
+            # 地理位置
+            {'regions': '//div[contains(@class,"regions")]/div//text()'},
 
         ]
     }

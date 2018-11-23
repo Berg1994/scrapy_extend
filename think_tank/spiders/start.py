@@ -1,3 +1,3 @@
 from scrapy import cmdline
 
-cmdline.execute(['scrapy', 'crawl', 'brookings'])
+cmdline.execute(['scrapy', 'crawl', 'rand'])

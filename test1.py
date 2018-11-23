@@ -36,3 +36,13 @@
 # dic1 = {'data':['1','2','3']}
 # dic1['data'].append('4')
 # print(dic1)
+from urllib.parse import urljoin
+
+import redis
+
+str1 = 'https://www.rand.org/content/dam/rand/people/a/agniel_denis.pdf'
+str2 = '/content/dam/rand/people/a/agniel_denis.pdf'
+str3 = str1.split('/')[2]
+print(str3)
+str4 = str3 + str2
+print(str4)

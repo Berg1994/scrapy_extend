@@ -2,6 +2,7 @@ import hashlib
 import json
 import re
 import time
+from urllib.parse import urljoin
 
 import requests
 import scrapy
@@ -100,7 +101,7 @@ class Parse_xpath(object):
 
     def parse_svg_url(self, svg_urls):
         """
-        解析页面中svg图
+        解析brookings页面中svg图
         :param site: 网站名称/标识
         :param response: 页面响应
         :return: svg接口数据
@@ -110,6 +111,28 @@ class Parse_xpath(object):
             svg_data = json.loads(requests.get(svg_url).text)
             svg_data_list.append(svg_data)
         return svg_data_list
+
+    def parse_expert_DV(self, response, dv_url):
+        """
+        对于rand中专家简历链接进行拼接
+        :param dv_url: 专家简历链接参数
+        :return: 完整专家简历链接
+        """
+        if dv_url:
+            base_url = response.url.split('/')[2]
+            return base_url + dv_url
+        return dv_url
+
+    def parse_check_data(self, data):
+        if data['expert_name'] and data['expert_detail']:
+            data['title'] = ""
+            data['content'] = ""
+        elif data['expert_detail']:
+            data['content'] = ""
+        elif data['expert_name']:
+            data['title'] = ""
+        else:
+            return data
 
     def parse_text(self, items):
         """
