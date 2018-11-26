@@ -129,8 +129,8 @@ XPAHT_DATA = [
     },
     {
         'id': 5,
-        'site': 'chanthamhouse.org',
-        'tag': 'chanthamhouse',
+        'site': 'chathamhouse.org',
+        'tag': 'chathamhouse',
         'xpath': [
             # 标题
             {'title': '//section[contains(@class,"page__section__main")]//h1//text()'},
@@ -145,7 +145,7 @@ XPAHT_DATA = [
             # 音频链接
             {'audio_url': '//div[contains(@class,"past-event-secondary-wrapper")]//article[3]/a/@href'},
             # 视频链接
-            {'video_url': '//div[@class="vid-wrapper"]//@src'},
+            {'video_url': '//div[@class="file"]//video/@src'},
             # 相关领域/主题
             {'topics': '//div[contains(@class,"projects")]/div//text()'},
             # 图片链接
@@ -162,6 +162,56 @@ XPAHT_DATA = [
             # 地理位置
             {'regions': '//div[contains(@class,"regions")]/div//text()'},
 
+        ]
+    },
+    {
+        'id': '6',
+        'site': 'heritage.org',
+        'tag': 'heritage',
+        'xpath': [
+            # 标题
+            {'title': '//div[@id="block-mainpagecontent"]//h1//text()'},
+            # 作者/参与者
+            {'author': '//div[contains(@class,"contributors-list")]//text()'},
+            # 内容
+            {'content': [
+                '//div[contains(@class,"body-copy")]//text()',
+                '//section[contains(@class,"body-copy")]//text()'
+            ]},
+            # 文章要点
+            {'content_key': '//div[contains(@class,"key-takeaways")]//p//text()'},
+            # 文章详情
+            {'content_detail': '//div[@id="block-mainpagecontent"]//div[@class="article-general-info"]/a/@href'},
+            # 发布时间
+            {'publish_time': '//div[@id="block-mainpagecontent"]//div[@class="article-general-info"]//text()'},
+            # 文章注释
+            {'foot_note': '//div[contains(@class,"references")]/div//text()'},
+            # 音频链接
+            {'audio_url': ''},
+            # 视频链接
+            {'video_url': ''},
+            # 相关领域/主题
+            {'topics': ''},
+            # 图片链接
+            {'images_url': ''},
+            # 书籍说明
+            {'book_info': ''},
+            # 会议地址
+            {'address': ''},
+            # 网站logo
+            {'logo': '//link[@rel="icon"]/@href'},
+            # 专家头像
+            {'expert_ icon': '//div[contains(@class,"card__photo")]/@style'},
+            # 专家名称
+            {'expert_name': '//div[@id="block-mainpagecontent"]//h1//text()'},
+            # 专家简介
+            {'expert_info': '//h2[contains(@class,"expert-title")]//text()'},
+            # 专家详情
+            {'expert_detail': '//div[contains(@class,"expert-bio-body")]//text()'},
+            # 专家简历
+            {'expertDV': ''},
+            # 专家领域
+            {'expert_topics': '//div[contains(@class,"areas-expertise")]//text()'}
         ]
     }
 ]

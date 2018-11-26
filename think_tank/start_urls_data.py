@@ -29,5 +29,11 @@ START_URLS_DATA = [
         'url': ['https://www.chathamhouse.org/research/topics/all'],
         'tag': 'chathamhouse',
     },
+    {
+        'id': 6,
+        'site': 'heritage.org',
+        'url': ['https://www.heritage.org/search?contains=&type=All&date_offset=&range_start=&range_end=&page=0'],
+        'tag': 'heritage',
+    },
 
 ]

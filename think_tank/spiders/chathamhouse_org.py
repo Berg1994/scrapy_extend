@@ -3,8 +3,8 @@ from think_tank.items import ThinkTankItem
 from think_tank.common_utils import start_item, parse_item
 
 
-class ChanThamHouseSpider(scrapy.Spider):
-    urls_data = start_item.get_url('chanthamhouse')
+class ChaThamHouseSpider(scrapy.Spider):
+    urls_data = start_item.get_url('chathamhouse')
     name = urls_data['tag']
     allowed_domains = [urls_data['site']]
     start_urls = urls_data['url']
@@ -64,8 +64,6 @@ class ChanThamHouseSpider(scrapy.Spider):
         if classify_latest_urls:
             for classify_latest_url in classify_latest_urls:
                 classify_latest = response.urljoin(classify_latest_url)
-                with open('classify0.json', 'a') as f:
-                    f.write(classify_latest + '\n')
                 yield scrapy.Request(classify_latest, callback=self.parse_page_detail, dont_filter=True)
 
         next_pager = base_classify_urls.xpath(
@@ -81,8 +79,6 @@ class ChanThamHouseSpider(scrapy.Spider):
         if classify_past_urls:
             for classify_past_url in classify_past_urls:
                 classify_past = response.urljoin(classify_past_url)
-                with open('classify3.json', 'a') as f:
-                    f.write(classify_past + '\n')
                 yield scrapy.Request(classify_past, callback=self.parse_page_detail, dont_filter=True)
 
         next_pager = base_fragment3_url.xpath(
@@ -98,8 +94,6 @@ class ChanThamHouseSpider(scrapy.Spider):
         if classify_past_urls:
             for classify_past_url in classify_past_urls:
                 classify_past = response.urljoin(classify_past_url)
-                with open('classify4.json', 'a') as f:
-                    f.write(classify_past + '\n')
                 yield scrapy.Request(classify_past, callback=self.parse_page_detail, dont_filter=True)
 
         next_pager = response.xpath(
