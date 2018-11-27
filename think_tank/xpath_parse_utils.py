@@ -2,15 +2,12 @@ import hashlib
 import json
 import re
 import time
-from urllib.parse import urljoin
 
 import requests
-import scrapy
 import pymongo
 
 from think_tank import xpath_data
 from think_tank import settings
-from think_tank.spiders import brookings
 
 
 class Parse_xpath(object):

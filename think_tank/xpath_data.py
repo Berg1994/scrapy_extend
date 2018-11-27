@@ -193,7 +193,7 @@ XPAHT_DATA = [
             # 相关领域/主题
             {'topics': ''},
             # 图片链接
-            {'images_url': ''},
+            {'images_url': '//div[contains(@class,body-copy)]//p//img/@src'},
             # 书籍说明
             {'book_info': ''},
             # 会议地址

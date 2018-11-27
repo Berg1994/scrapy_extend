@@ -35,5 +35,11 @@ START_URLS_DATA = [
         'url': ['https://www.heritage.org/search?contains=&type=All&date_offset=&range_start=&range_end=&page=0'],
         'tag': 'heritage',
     },
+    {
+        'id': 7,
+        'site': 'carnegieendowment.org',
+        'tag': 'carnegieendowment',
+        'url': ['https://carnegieendowment.org'],
+    },
 
 ]
