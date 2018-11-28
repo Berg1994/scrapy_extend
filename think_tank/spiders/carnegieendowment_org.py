@@ -9,7 +9,6 @@ class CarnegieendowmentSpider(scrapy.Spider):
     # allowed_domains = [urls_data['site']]
     start_urls = urls_data['url']
 
-
     def parse(self, response):
 
         base_url = 'https://carnegieendowment.org/search/?qry=&center='
@@ -25,5 +24,14 @@ class CarnegieendowmentSpider(scrapy.Spider):
             yield scrapy.Request(url=response.urljoin(next_page), callback=self.parse_all_urls)
 
     def parse_page_detail(self, response):
-        with open('text2.json', 'a') as f:
-            f.write(response.url + '\n')
+        content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
+        comment = content_by_xpath['comment_author']
+        if comment:
+            for
+        # 对非解析获取的字段赋值
+        data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
+        item = ThinkTankItem()
+        item['data'] = data
+        item['site'] = self.urls_data['site']
+        item['tag'] = self.urls_data['tag']
+        yield item

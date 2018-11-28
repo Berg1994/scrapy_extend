@@ -41,5 +41,11 @@ START_URLS_DATA = [
         'tag': 'carnegieendowment',
         'url': ['https://carnegieendowment.org'],
     },
+    {
+        'id': 8,
+        'site': 'bruegel.org',
+        'tag': 'bruegel',
+        'url': ['http://bruegel.org/?basefilter=all&s=&paged=1']
+    }
 
 ]
