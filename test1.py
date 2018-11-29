@@ -40,9 +40,75 @@ from urllib.parse import urljoin
 
 import redis
 
-str1 = 'https://www.rand.org/content/dam/rand/people/a/agniel_denis.pdf'
-str2 = '/content/dam/rand/people/a/agniel_denis.pdf'
-str3 = str1.split('/')[2]
-print(str3)
-str4 = str3 + str2
-print(str4)
+# str1 = 'https://www.rand.org/content/dam/rand/people/a/agniel_denis.pdf'
+# str2 = '/content/dam/rand/people/a/agniel_denis.pdf'
+# str3 = str1.split('/')[2]
+# print(str3)
+# str4 = str3 + str2
+# print(str4)
+
+
+XPAHT_DATA = [
+    {
+        'id': '',
+        'site': '',
+        'tag': '',
+        'xpath': [
+            # 当前链接
+            {'primary_site': ''},
+            # 爬取时间
+            {'create_time': ''},
+            # sha1指纹
+            {'finger_print': ''},
+            # 网站名称
+            {'site_name': ''},
+            # 主题
+            {'topics': ''},
+            # 标题
+            {'title': ''},
+            # 作者
+            {'author': ''},
+            # 发布时间
+            {'publish_time': ''},
+            # 地址
+            {'address': ''},
+            # 文章说明
+            {'content_info': ''},
+            # 文章内容
+            {'content': ''},
+            # 文章注释
+            {'content_annotation': ''},
+            # 相关领域
+            {'related_field': ''},
+            # 地理位置
+            {'regions': ''},
+            # 图片链接
+            {'image_url': ''},
+            # 音频链接
+            {'audio_url': ''},
+            # 视频链接
+            {'video_url': ''},
+            # 网站logo
+            {'logo': ''},
+            # svg数据链接
+            {'svg_url': ''},
+            # svg数据
+            {'svg_data': ''},
+            # 文章pdf
+            {'content_download': ''},
+            # 专家头像
+            {'expert_icon': ''},
+            # 专家名称
+            {'expert_name': ''},
+            # 专家简介
+            {'expert_info': ''},
+            # 专家详情
+            {'expert_detail': ''},
+            # 专家简历
+            {'expert_dv': ''},
+            # 专家领域
+            {'expert_topics': ''},
+
+        ]
+    }
+]

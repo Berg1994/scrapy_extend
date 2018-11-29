@@ -18,7 +18,7 @@ class ThinkTankPipeline(object):
 
     def process_item(self, item, spider):
         if spider.name == item['tag']:
-            collcetions = self.db[item['tag']]
+            collcetions = self.db[item['site']]
             collcetions.update({'finger_print': item['data']['finger_print']}, {'$set': item['data']}, True)
 
         return item

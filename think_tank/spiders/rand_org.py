@@ -48,6 +48,7 @@ class RandOrgSpider(scrapy.Spider):
         """
         content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
         # 对非解析获取的字段赋值
+        parse_item.processing_data(content_by_xpath)
         data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
         data['expertDV'] = parse_item.parse_expert_DV(response, data['expertDV'])
         parse_item.parse_check_data(data)

@@ -15,7 +15,7 @@ class Parse_xpath(object):
     def __init__(self):
         self.mongo_host = settings.MONGODB_HOST
         self.mongo_port = settings.MONGODB_POST
-        self.mongo_db = settings.MONGODB_DB
+        self.mongo_db = settings.XPATH_MONGODB_DB
         self.mongo_collection = settings.MONGODB_COLLECTIONS_XPATH_PARSE
 
         self.conn = pymongo.MongoClient(host=self.mongo_host,
@@ -36,17 +36,17 @@ class Parse_xpath(object):
             print(e.args)
             print('保存失败')
 
-    def get_xpath_data(self, tag):
+    def get_xpath_data(self, site):
         """
         获取对应网站xpath解析数据
         :param site: 网站名称/标识
         :return: xpath数据
         """
-        res = self.collection.find_one({'tag': tag})
+        res = self.collection.find_one({'site': site})
         return res
 
-    def parse_response(self, tag, response):
-        result = self.get_xpath_data(tag)
+    def parse_response(self, site, response):
+        result = self.get_xpath_data(site)
 
         data = {}
         for xpath_field in result['xpath']:
@@ -56,9 +56,8 @@ class Parse_xpath(object):
                         try:
                             ret = response.xpath(value).extract()
                             if ret:
-                                data[k] = (self.parse_text(ret).strip())
-
-
+                                # data[k] = (self.parse_text(ret).strip())
+                                data[k] = ret
                         except:
                             data['error_url'] = response.url
                 elif isinstance(v, str):
@@ -67,7 +66,8 @@ class Parse_xpath(object):
                         if not ret:
                             data[k] = ""
                         else:
-                            data[k] = self.parse_text(ret).strip()
+                            # data[k] = self.parse_text(ret).strip()
+                            data[k] = ret
                     except:
                         data['error_url'] = response.url
         return data
@@ -83,16 +83,17 @@ class Parse_xpath(object):
         # 当前页面链接
         data['primary_site'] = response.url
         # 网站名称
-        data['org_name'] = tag
+        data['site_name'] = tag
         # 爬取时间
         data['create_time'] = time.time()
         # 指纹
         data['finger_print'] = self.create_fingerprint(response.url)
         # 内容分类
         try:
-            data['classify'] = response.url.split('/')[3]
+            if data['topics'] == "":
+                data['topics'] = response.url.split('/')[3]
         except:
-            data['classify'] = response.url
+            data['topics'] = response.url
 
         return data
 
@@ -104,7 +105,7 @@ class Parse_xpath(object):
         :return: svg接口数据
         """
         svg_data_list = []
-        for svg_url in svg_urls.split():
+        for svg_url in svg_urls:
             svg_data = json.loads(requests.get(svg_url).text)
             svg_data_list.append(svg_data)
         return svg_data_list
@@ -120,16 +121,24 @@ class Parse_xpath(object):
             return base_url + dv_url
         return dv_url
 
-    def parse_check_data(self, data):
-        if data['expert_name'] and data['expert_detail']:
-            data['title'] = ""
-            data['content'] = ""
-        elif data['expert_detail']:
-            data['content'] = ""
-        elif data['expert_name']:
-            data['title'] = ""
-        else:
-            return data
+    def processing_data(self, data):
+        for k, v in data.items():
+            if k == 'content':
+                data[k] = self.parse_text(data[k])
+            if k == 'address':
+                data[k] = self.parse_text(data[k])
+            if k == 'content_download':
+                if data[k]:
+                    data['expert_dv'] = ''
+            if k == 'expert_name':
+                if data[k]:
+                    data['title'] = ''
+            if k == 'expert_detail':
+                if data[k]:
+                    data['content'] = ''
+        return data
+
+
 
     def parse_text(self, items):
         """
@@ -139,8 +148,8 @@ class Parse_xpath(object):
         """
         content = ''
         for ele in items:
-            str = re.sub(r'\r|\n|\t|\xa0', '', ele)
-            content += str + ' '
+            ele_str = re.sub(r'\r|\n|\t|\xa0', '', ele)
+            content += ele_str + ' '
         return content.strip()
 
     def create_fingerprint(self, url):

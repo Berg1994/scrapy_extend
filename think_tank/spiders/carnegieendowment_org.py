@@ -27,7 +27,8 @@ class CarnegieendowmentSpider(scrapy.Spider):
         content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
         comment = content_by_xpath['comment_author']
         if comment:
-            for
+            pass
+        parse_item.processing_data(content_by_xpath)
         # 对非解析获取的字段赋值
         data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
         item = ThinkTankItem()

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import json
 from think_tank.items import ThinkTankItem
 from think_tank.common_utils import start_item, parse_item
 
@@ -54,12 +53,13 @@ class BrookingsSpider(scrapy.Spider):
         """
         # 通过获取数据库对应xpath解析对应字段
 
-        content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
+        content_by_xpath = parse_item.parse_response(self.urls_data['site'], response)
         content_by_xpath['svg_data'] = []
-        if content_by_xpath['svg_data_urls']:
+        if content_by_xpath['svg_url']:
             content_by_xpath['svg_data'].append(
-                parse_item.parse_svg_url(content_by_xpath['svg_data_urls']))
+                parse_item.parse_svg_url(content_by_xpath['svg_url']))
         # 对非解析获取的字段赋值
+        parse_item.processing_data(content_by_xpath)
         data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
         self.item['data'] = data
         self.item['tag'] = self.urls_data['tag']

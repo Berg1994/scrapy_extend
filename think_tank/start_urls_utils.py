@@ -12,7 +12,7 @@ class StartUrls(object):
     def __init__(self):
         self.mongo_host = settings.MONGODB_HOST
         self.mongo_port = settings.MONGODB_POST
-        self.mongo_db = settings.MONGODB_DB
+        self.mongo_db = settings.START_MONGODB_DB
         self.mongo_collection = settings.MONGODB_COLLECTIONS_START_URLS
 
         self.conn = pymongo.MongoClient(host=self.mongo_host,

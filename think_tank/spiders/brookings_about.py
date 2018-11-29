@@ -14,8 +14,9 @@ class BrookingsAboutSpider(scrapy.Spider):
         """
         解析页面信息
         """
-        content_by_xpath = parse_item.parse_response(self.urls_data['tag'], response)
+        content_by_xpath = parse_item.parse_response(self.urls_data['site'], response)
         # 对非解析获取的字段赋值
+        parse_item.processing_data(content_by_xpath)
         data = parse_item.parse_common_field(response, content_by_xpath, self.urls_data['site'])
         item = ThinkTankItem()
         item['data'] = data
